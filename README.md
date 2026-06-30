@@ -75,7 +75,7 @@ MRR distribution by plan, churn rate by plan, and monthly new vs churned MRR wat
 ![Revenue Simulator](DASHBOARD/06_Revenue_Simulator.png)
 Interactive What-If sliders modelling the monthly and annual MRR impact of improvements to conversion rate, activation rate, and churn reduction, used to size the business case for each product initiative.
 
-> 🎥 Prefer the interactive version? Watch the full [Dashboard Demo Video](https://drive.google.com/file/d/13a11yeu8Y3z-h3lL9rbJPrMQA8cHaGYG/view)
+🎥 Prefer the interactive version? Watch the full [Dashboard Demo Video](https://drive.google.com/file/d/13a11yeu8Y3z-h3lL9rbJPrMQA8cHaGYG/view)
 
 ---
 
