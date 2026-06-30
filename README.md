@@ -6,7 +6,7 @@
 
 A B2B SaaS platform operating across 10 European markets was converting only 17% of trial users to paid (below the 20% industry benchmark), with no visibility into funnel drop-off, activation behaviour, retention patterns, or churn drivers.
 
-Using SQL, Python, and Power BI, I analysed 857,552 product events across 2,500 trial users over 24 months, calculating DAU/MAU stickiness, monthly cohort retention (M0–M11), activation rate, funnel drop-off, churn by segment, and MRR waterfall, then built a 6-page self-serve dashboard to track all of it in real time.
+Using **SQL, Python, and Power BI,** I analysed 857,552 product events across 2,500 trial users over 24 months, calculating DAU/MAU stickiness, monthly cohort retention (M0–M11), activation rate, funnel drop-off, churn by segment, and MRR waterfall, then built a 6-page self-serve dashboard to track all of it in real time.
 
 **Key impact:** 38% of verified users never begin onboarding, and users who create a workspace within 72 hours convert at 10.4x the baseline rate. DAU/MAU stickiness for activated users runs at 34% at M1 but drops to 18% by M3, and Starter plan churn (41.6%) is nearly 4x Enterprise (10.3%), the largest driver of MRR erosion. An A/B test of revised onboarding copy shows a statistically significant lift (p = 0.002), projecting €408,637 in additional annual ARR if rolled out, and the self-serve dashboard reduces ad hoc analytics requests by an estimated 5 hours per week.
 
