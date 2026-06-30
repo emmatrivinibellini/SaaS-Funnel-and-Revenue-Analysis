@@ -52,28 +52,30 @@ Without answers to these questions, the product team was shipping onboarding cha
 ## Dashboard
 
 ### Executive Overview
-![Executive Overview](IMAGES/dashboard_overview.png)
+![Executive Overview](DASHBOARD/01_Executive_Overview.png)
 KPI cards for conversion rate, activation rate, MRR, and churn rate, with monthly signup vs conversion trend, MRR by plan, and conversion rate by country, all filterable by period, plan, country, company size, activation status, and signup source.
 
 ### Funnel Analysis
-![Funnel Analysis](IMAGES/dashboard_funnel.png)
+![Funnel Analysis](DASHBOARD/02_Funnel_Analysis.png)
 Step-by-step funnel waterfall from signup to paid conversion, with conversion rate by company size and feature conversion lift, showing which in-product action within 72 hours best predicts conversion.
 
 ### Funnel Decomposition
-![Funnel Decomposition](IMAGES/dashboard_decomposition.png)
+![Funnel Decomposition](DASHBOARD/03_Funnel_Decomposition.png)
 Branches the activation bottleneck (data source connection) into success, failure, and drop-off paths, with the specific technical failure reasons (invalid API key, permission denied, timeout) and the revenue at stake for each.
 
 ### Cohort Retention
-![Cohort Retention](IMAGES/dashboard_retention.png)
+![Cohort Retention](DASHBOARD/04_Cohort_Retention.png)
 Monthly cohort retention heatmap (M0–M11) alongside cohort-level conversion rate, used to identify which signup cohorts and which post-signup months carry the highest churn risk.
 
 ### Revenue & Churn
-![Revenue & Churn](IMAGES/dashboard_revenue.png)
+![Revenue & Churn](DASHBOARD/05_Revenue_&_Churn.png)
 MRR distribution by plan, churn rate by plan, and monthly new vs churned MRR waterfall, used to quantify where recurring revenue is being lost and which segment to prioritise for retention.
 
 ### Revenue Simulator
 ![Revenue Simulator](DASHBOARD/06_Revenue_Simulator.png)
 Interactive What-If sliders modelling the monthly and annual MRR impact of improvements to conversion rate, activation rate, and churn reduction, used to size the business case for each product initiative.
+
+> 🎥 Prefer the interactive version? Watch the full [Dashboard Demo Video](https://drive.google.com/file/d/13a11yeu8Y3z-h3lL9rbJPrMQA8cHaGYG/view)
 
 ---
 
@@ -131,11 +133,15 @@ Enterprise users convert at 31.4% vs 11.2% for SMB, with average MRR of €2,140
 
 ---
 
+## Dataset  
+
+---
+
 ## Repository Structure
 
 | File | Description |
 |---|---|
 | `sql_queries.sql` | Table creation, cleaning, funnel, cohort retention, DAU/MAU, churn flagging, MRR waterfall, Power BI views |
 | `analysis.py` | Python: data cleaning, funnel visualisation, cohort heatmap, activation analysis, A/B test, revenue simulator |
-| `DASHBOARD/` | Dashboard screenshots (Executive Overview, Funnel Analysis, Funnel Decomposition, Cohort Retention, Revenue & Churn, Revenue Simulator) |
+| `DASHBOARD` | Dashboard screenshots (Executive Overview, Funnel Analysis, Funnel Decomposition, Cohort Retention, Revenue & Churn, Revenue Simulator) |
 | `README.md` | Case study: problem, methodology, findings, recommendations |
