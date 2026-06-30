@@ -133,10 +133,6 @@ Enterprise users convert at 31.4% vs 11.2% for SMB, with average MRR of €2,140
 
 ---
 
-## Dataset  
-
----
-
 ## Repository Structure
 
 | File | Description |
