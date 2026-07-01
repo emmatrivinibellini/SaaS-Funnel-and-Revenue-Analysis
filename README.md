@@ -6,7 +6,7 @@
 
 A B2B SaaS platform operating across 10 European markets was converting only 17% of trial users to paid (below the 20% industry benchmark), with no visibility into funnel drop-off, activation behaviour, retention patterns, or churn drivers.
 
-Using **SQL, Python, and Power BI,** I analysed 857,552 product events across 2,500 trial users over 24 months, calculating DAU/MAU stickiness, monthly cohort retention (M0–M11), activation rate, funnel drop-off, churn by segment, and MRR waterfall, then built a 6-page self-serve dashboard to track all of it in real time.
+Using **SQL, Python and Power BI,** I analysed 857,552 product events across 2,500 trial users over 24 months, measuring funnel conversion, activation, DAU/MAU stickiness, cohort retention, churn drivers, and MRR impact.
 
 **Key impact:** 38% of verified users never begin onboarding, and users who create a workspace within 72 hours convert at 10.4x the baseline rate. DAU/MAU stickiness for activated users runs at 34% at M1 but drops to 18% by M3, and Starter plan churn (41.6%) is nearly 4x Enterprise (10.3%), the largest driver of MRR erosion. An A/B test of revised onboarding copy shows a statistically significant lift (p = 0.002), projecting €408,637 in additional annual ARR if rolled out, and the self-serve dashboard reduces ad hoc analytics requests by an estimated 5 hours per week.
 
@@ -25,25 +25,23 @@ Four questions were driving the analysis:
 3. **Cohort retention:** How does retention decay over M0–M11 by signup cohort, and which cohorts show the steepest early drop-off?
 4. **Churn & revenue impact:** What is the monthly MRR lost to churn by plan and segment, and what is the revenue value of closing each identified drop-off point?
 
-Without answers to these questions, the product team was shipping onboarding changes without knowing which step to prioritise, the growth team had no quantified revenue target to justify experimentation investment, and every stakeholder question required a one-off analytics request (with no self-serve visibility into the metrics that drive the business). 
-
 ---
 
 ## Methodology
 
-1. **SQL**: extracted, cleaned, and transformed 857,552 raw product events from the database: deduplicated user records, standardised mixed timestamp formats, imputed NULL values in country and company size fields, and built analytical views covering funnel drop-off at 7 steps, cohort retention M0–M11, DAU and MAU by plan, DAU/MAU stickiness ratio, activation rate, churn flagging by segment, MRR waterfall (new MRR, churned MRR, net new MRR, cumulative ARR), LTV estimation, and revenue-at-risk scoring. Power BI-ready views were built as a final output layer for direct dashboard import.
+1. **SQL**: cleaned and transformed 857k product events into analytical datasets supporting funnel analysis, cohort retention, DAU/MAU, churn segmentation, MRR waterfall, and Power BI reporting.
 
-2. **Power BI**: built a 6-page interactive dashboard with slicers across six dimensions: period, plan type, country, company size, activation status, and signup source. All KPIs, funnel visuals, cohort heatmaps, and revenue charts update in real time when filters are applied. A What-If parameter slider on the Revenue Simulator page allows stakeholders to model the MRR impact of conversion and activation rate improvements interactively (without involving the analytics team).
+2. **Power BI**: built a 6-page interactive dashboard with slicers across six dimensions: period, plan type, country, company size, activation status, and signup source. All KPIs, funnel visuals, cohort heatmaps, and revenue charts update in real time when filters are applied. A What-If parameter slider on the Revenue Simulator page allows stakeholders to model the MRR impact of conversion and activation rate improvements interactively.
 
-3. **Python**: ran a full data quality audit (null rates, duplicate detection, timestamp format distribution), built funnel waterfall visualisation with per-step drop-off rates, calculated DAU/MAU stickiness trends by plan, rendered monthly cohort retention heatmap (M0–M11), computed conversion lift for every onboarding feature used within 72 hours of signup, built customer survival curves by plan type, ran a two-proportion z-test and 10,000-iteration bootstrap confidence interval to validate A/B test statistical significance, and modelled monthly and annual revenue impact across conversion improvement scenarios from +1% to +15%.
+3. **Python**: Performed data quality checks, funnel analysis, cohort retention, activation analysis, survival analysis, A/B testing (z-test + bootstrap CI), and revenue impact simulations.
 
 ---
 
 ## Skills
 
-**SQL:** CTEs, Window Functions, Funnel Analysis, Cohort Retention Analysis, DAU/MAU Stickiness, Churn Flagging, YoY Analysis, MRR Waterfall, LTV Estimation, Aggregate Functions, RANK(), ROW_NUMBER(), LAG(), PERCENTILE_CONT, CASE, FULL OUTER JOIN
+**SQL:** CTEs, Window Functions, Funnel Analysis, Cohort Retention Analysis, DAU/MAU Stickiness, Churn Analysis, Revenue Analytics, YoY Analysis, MRR Waterfall, LTV Estimation
 
-**Power BI:** DAX, KPI Cards, Funnel Visual, Cohort Heatmap Matrix, What-If Parameters, Slicers, Drill-through, ETL in Power Query, Data Modelling, Calculated Columns, Conditional Formatting
+**Power BI:** DAX, Data Modelling, KPI Dashboard, Drill-through, What-If Parameters, Funnel Visual, Cohort Heatmap Matrix, ETL in Power Query
 
 **Python:** Pandas, NumPy, Matplotlib, Seaborn, SciPy, Statsmodels, A/B Testing (two-proportion z-test), Bootstrap Confidence Interval, Survival Analysis, Feature Conversion Lift, DAU/MAU Calculation, Revenue Impact Simulation
 
@@ -81,11 +79,11 @@ Interactive What-If sliders modelling the monthly and annual MRR impact of impro
 
 ## Results & Business Recommendations
 
-Building a 6-page self-serve Power BI dashboard, filterable in real time by period, country, plan, company size, activation status, and signup source, gives product and growth stakeholders full visibility into funnel performance, cohort retention, and revenue health. Because this data is now democratised, the analytics team saves an estimated **5 fewer hours per week** on ad hoc reporting requests.
+Building a 6-page Power BI dashboard, filterable in real time by period, country, plan, company size, activation status, and signup source, gives product and growth stakeholders full visibility into funnel performance, cohort retention, and revenue health. Because this data is now democratised, the analytics team saves an estimated **5 fewer hours per week** on ad hoc reporting requests.
 
 **Finding 1 - 38% of users drop out between email verification and onboarding start**
 
-The largest single drop-off in the funnel occurs immediately after email verification: 38% of verified users never take a first onboarding step. This is the highest-volume loss point in absolute terms and the clearest quick-win opportunity in the entire funnel.
+The largest single drop-off in the funnel occurs immediately after email verification: 38% of verified users never take a first onboarding step. This is the highest-volume loss point in absolute terms.
 
 *Recommendation:* Redesign the post-verification landing page with a single CTA, a visual progress bar, and "ready in 5 minutes" copy. A/B test confirms an 8.2% lift in activation rate (p = 0.002, 95% CI: +1.9% to +10.1%). Roll out to 100% of new users (projecting **€408,637 in additional annual ARR**).
 
@@ -126,7 +124,7 @@ Enterprise users convert at 31.4% vs 11.2% for SMB, with average MRR of €2,140
 
 ## Next Steps
 
-1. Roll out the onboarding copy change to 100% of new trial users (A/B test statistically significant at p = 0.002, projecting €408,637 in annual ARR)
+1. Roll out the onboarding copy change to 100% of new trial users (A/B test at p = 0.002, projecting €408,637 in annual ARR)
 2. Build and deploy the day-3 automated in-app trigger for users who have not yet created a workspace
 3. Run a second A/B test on the post-email-verification landing page to measure impact on onboarding start rate and close the 38% drop-off
 4. Build a churn prediction model in Python using tenure, feature usage frequency, and plan type, target Starter users in the M1–M2 window before churn occurs
