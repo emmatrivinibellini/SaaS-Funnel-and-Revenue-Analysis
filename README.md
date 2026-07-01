@@ -33,7 +33,7 @@ Four questions were driving the analysis:
 
 2. **Power BI**: built a 6-page interactive dashboard with slicers across six dimensions: period, plan type, country, company size, activation status, and signup source. All KPIs, funnel visuals, cohort heatmaps, and revenue charts update in real time when filters are applied. A What-If parameter slider on the Revenue Simulator page allows stakeholders to model the MRR impact of conversion and activation rate improvements interactively.
 
-3. **Python**: Performed data quality checks, funnel analysis, cohort retention, activation analysis, survival analysis, A/B testing (z-test + bootstrap CI), and revenue impact simulations.
+3. **Python**: performed data quality checks, funnel analysis, cohort retention, activation analysis, survival analysis, A/B testing (z-test + bootstrap CI), and revenue impact simulations.
 
 ---
 
